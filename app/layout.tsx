@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-// import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next"
 // import { Watermark } from "@/components/watermark"
 import { ChatButton } from "@/components/ChatButton"
 import "./globals.css"
@@ -92,7 +92,7 @@ export default function RootLayout({
         {children}
         {/* <Watermark /> */}
         <ChatButton />
-        {/* <Analytics /> */}
+        <Analytics />
       </body>
     </html>
   )
