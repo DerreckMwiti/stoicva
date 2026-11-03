@@ -76,19 +76,19 @@ export function ContactSection() {
             {
               icon: Mail,
               title: "Email",
-              content: "hello@stoicva.com",
-              link: "mailto:hello@stoicva.com",
+              content: "support@stoicva.com",
+              link: "mailto:support@stoicva.com",
             },
             {
               icon: Phone,
               title: "Phone",
-              content: "+1 (555) 123-4567",
+              content: "+254 729 707173",
               link: "tel:+15551234567",
             },
             {
               icon: MapPin,
               title: "Office",
-              content: "San Francisco, CA",
+              content: "Nairobi, Kenya",
               link: "#",
             },
           ].map((item, index) => {
