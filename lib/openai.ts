@@ -1,11 +1,19 @@
 import OpenAI from 'openai';
 
-if (!process.env.OPENAI_API_KEY) {
-  throw new Error('Missing OPENAI_API_KEY environment variable');
+const apiKey = process.env.OPENROUTER_API_KEY;
+
+if (!apiKey) {
+  throw new Error('Missing OPENROUTER_API_KEY environment variable');
 }
 
 export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  baseURL: 'https://openrouter.ai/api/v1',
+  apiKey: apiKey,
+  defaultHeaders: {
+    // Optional headers for OpenRouter rankings / app identification
+    'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    'X-Title': 'StoicVA Assistant',
+  },
 });
 
 export const SYSTEM_PROMPT = `You are StoicVA Assistant, a calm, professional guide for StoicVA.com.
