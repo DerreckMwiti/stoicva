@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'openai/gpt-4o-mini', // OpenRouter model path format: vendor/model-name
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         ...messages
